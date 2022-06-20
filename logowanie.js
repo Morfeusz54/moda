@@ -1,41 +1,41 @@
-class logowanie {
+    class logowanie {
 
-    navigate(){
-        cy.visit('http://automationpractice.com/index.php').get('.login').click()
-    }
 
-   
+        navigate(){
+            cy.visit('http://automationpractice.com/index.php').get('.login').click();
+            return this
+        }
     
-    _email(){
-        cy.get('#email_create')
+       _emailSelector = '#email_create';
         
-        .clear()
-       // .type();
-        return this
-    }
-    _email1(){
-        cy.get('#email')
-        
-        .clear()
-        .type('user@example.org')
-       // .type();
-        return this
-    }
-    
-    _password(){
-        cy.get('#passwd')
-        .clear()
-        //.type();
-        return this
-    }
-    _submit(){
-        cy.get('#submitAccount > span')
-          .click();
-        return this
-    }
-    _notatka(){
-    cy.get('#other').type('notatka')
+       typeemail(text){
+            cy.get(_emailSelector).clear().type(text);
+            return this
+        }
 
+        _emailSelector1 = '#email';
+        typemail1(){
+            cy.get(_emailSelector1).clear().type(text);
+            
+           
+            return this
+        }
+        _passwd = '#passwd';
+        password(){
+            cy.get(_paswd).clear().type(text);
+            return this
+        }
+
+        _sub = '#submitAccount > span';
+        submit(){
+            cy.get(_paswd).click();
+            return this
+        }
+
+        _not = '#other';
+        notatka(){
+        cy.get(this._not).type(text)
+    
+        }
     }
-}
-export default logowanie
+    export default logowanie
