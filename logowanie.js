@@ -1,40 +1,45 @@
     class logowanie {
-
+        _emailSelector = '#email_create'
+        _emailSelector1 = '#email'
+        _paswd = '#passwd'
+        _sub = '#submitAccount > span'
+        _not = '#other'
 
         navigate(){
             cy.visit('http://automationpractice.com/index.php').get('.login').click();
             return this
         }
     
-       _emailSelector = '#email_create';
+       
         
        typeemail(text){
-            cy.get(_emailSelector).clear().type(text);
+        
+            cy.get(this._emailSelector).clear().type(text);
             return this
         }
 
-        _emailSelector1 = '#email';
-        typemail1(){
-            cy.get(_emailSelector1).clear().type(text);
+       
+        typemail1(text){
+            cy.get(this._emailSelector1).clear().type(text);
             
            
             return this
         }
-        _passwd = '#passwd';
-        password(){
-            cy.get(_paswd).clear().type(text);
+       
+        password(pass){
+            cy.get(this._paswd).clear().type(pass);
             return this
         }
 
-        _sub = '#submitAccount > span';
+        
         submit(){
-            cy.get(_paswd).click();
+            cy.get('#SubmitCreate > span').click();
             return this
         }
 
-        _not = '#other';
-        notatka(){
-        cy.get(this._not).type(text)
+        
+        notatka(tekst){
+        cy.get(this._not).type(tekst);
     
         }
     }
